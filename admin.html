@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Jobs Era Admin</title><meta name="robots" content="noindex,nofollow"><link rel="stylesheet" href="css/style.css"></head>
+<body class="adminBody"><header><a class="brandLogo" href="index.html"><img src="assets/jobs-era-logo.png" alt="Jobs Era"></a><a class="btn ghost" href="index.html">View Site</a></header>
+<main class="adminWrap">
+<section id="loginBox" class="panel login"><h1>Admin Login</h1><p>Only the site administrator can publish content.</p><input id="email" type="email" placeholder="Admin email"><input id="password" type="password" placeholder="Password"><button class="btn" id="loginBtn">Login</button><p class="hint">Demo: admin@jobsera.com / Jobs Era123</p></section>
+<section id="dashboard" class="hidden">
+<div class="adminTitle"><div><small>CONTROL CENTER</small><h1>Content Dashboard</h1></div><button id="logout" class="btn danger">Logout</button></div>
+<div class="stats"><div><b id="blogCount">0</b><span>Blogs</span></div><div><b id="jobCount">0</b><span>Jobs</span></div><button class="commentStat" id="openComments"><b id="commentCount">0</b><span>Comments</span><small>Click to read →</small></button></div>
+
+<div class="panel siteEditor">
+<h2>Website Editor</h2>
+<p class="hint">Edit homepage text and appearance. Changes are saved in this browser.</p>
+<div class="editorTabs">
+<button type="button" class="editorTab active" data-editor-tab="content">Content</button>
+<button type="button" class="editorTab" data-editor-tab="appearance">Appearance</button>
+</div>
+<div class="editorPane" data-editor-pane="content">
+<label>Hero badge<input id="editHeroPill"></label>
+<label>Hero heading<input id="editHeroTitle"></label>
+<label>Highlighted heading<input id="editHeroAccent"></label>
+<label>Hero description<textarea id="editHeroDescription"></textarea></label>
+<div class="editorTwo"><label>Primary button<input id="editPrimaryButtonText"></label><label>Secondary button<input id="editSecondaryButtonText"></label></div>
+<div class="editorTwo"><label>Blogs label<input id="editBlogEyebrow"></label><label>Blogs heading<input id="editBlogHeading"></label></div>
+<div class="editorTwo"><label>Jobs label<input id="editJobEyebrow"></label><label>Jobs heading<input id="editJobHeading"></label></div>
+<label>Footer text<input id="editFooterText"></label>
+</div>
+<div class="editorPane hidden" data-editor-pane="appearance">
+<div class="colorGrid">
+<label>Website background<input type="color" id="editBgColor"></label>
+<label>Text color<input type="color" id="editTextColor"></label>
+<label>Primary color<input type="color" id="editPrimaryColor"></label>
+<label>Accent color<input type="color" id="editAccentColor"></label>
+<label>Primary button<input type="color" id="editPrimaryButtonColor"></label>
+<label>Secondary button<input type="color" id="editSecondaryButtonColor"></label>
+<label>Login button<input type="color" id="editLoginButtonColor"></label>
+<label>Language button<input type="color" id="editLanguageButtonColor"></label>
+</div>
+</div>
+<div class="editorActions"><button type="button" class="btn" id="saveSiteSettings">Save Website</button><button type="button" class="btn ghost" id="resetSiteSettings">Reset</button></div>
+</div>
+
+
+<div class="panel cmsOperations">
+<h2>Blog Operations</h2>
+<p class="hint">Manage publishing, SEO, navigation, announcements, backups and users without editing code.</p>
+<div class="opsTabs">
+<button type="button" class="opsTab active" data-ops-tab="publishing">Publishing</button>
+<button type="button" class="opsTab" data-ops-tab="seo">SEO & Site</button>
+<button type="button" class="opsTab" data-ops-tab="navigation">Navigation</button>
+<button type="button" class="opsTab" data-ops-tab="legal">Legal Pages</button>
+<button type="button" class="opsTab" data-ops-tab="backup">Data & Users</button>
+</div>
+
+<div class="opsPane" data-ops-pane="publishing">
+<div class="editorTwo">
+<label>Default author<input id="cmsDefaultAuthor" placeholder="Jobs Era Team"></label>
+<label>Posts per page<input id="cmsPostsPerPage" type="number" min="1" max="100"></label>
+</div>
+<div class="editorTwo">
+<label>Default post status<select id="cmsDefaultStatus"><option value="published">Published</option><option value="draft">Draft</option></select></label>
+<label>Allow comments<select id="cmsAllowComments"><option value="yes">Yes</option><option value="no">No</option></select></label>
+</div>
+<label>Announcement bar text<input id="cmsAnnouncement" placeholder="Important update..."></label>
+<div class="editorTwo">
+<label>Announcement link<input id="cmsAnnouncementLink" placeholder="https://..."></label>
+<label>Announcement status<select id="cmsAnnouncementEnabled"><option value="no">Hidden</option><option value="yes">Visible</option></select></label>
+</div>
+</div>
+
+<div class="opsPane hidden" data-ops-pane="seo">
+<label>Site title<input id="cmsSiteTitle" placeholder="Jobs Era"></label>
+<label>Site description<textarea id="cmsSiteDescription" placeholder="Short description for search engines"></textarea></label>
+<div class="editorTwo">
+<label>Contact email<input id="cmsContactEmail" type="email" placeholder="hello@example.com"></label>
+<label>Copyright text<input id="cmsCopyright" placeholder="© 2026 Jobs Era"></label>
+</div>
+<div class="editorTwo">
+<label>Facebook URL<input id="cmsFacebook" placeholder="https://..."></label>
+<label>Instagram URL<input id="cmsInstagram" placeholder="https://..."></label>
+</div>
+<div class="editorTwo">
+<label>LinkedIn URL<input id="cmsLinkedin" placeholder="https://..."></label>
+<label>YouTube URL<input id="cmsYoutube" placeholder="https://..."></label>
+</div>
+</div>
+
+<div class="opsPane hidden" data-ops-pane="navigation">
+<p class="hint">One menu item per line in the format: Label | URL</p>
+<label>Header menu<textarea id="cmsHeaderMenu" placeholder="Home | index.html&#10;Blogs | #blogs&#10;Jobs | #jobs"></textarea></label>
+<label>Footer links<textarea id="cmsFooterLinks" placeholder="About | about.html&#10;Privacy | privacy.html"></textarea></label>
+<div class="editorActions"><button type="button" class="btn" id="saveOperations">Save Operations</button></div>
+</div>
+
+
+<div class="opsPane hidden" data-ops-pane="legal">
+<h3>Terms &amp; Conditions</h3>
+<p class="hint">Edit the public Terms &amp; Conditions page. Plain text and line breaks are supported.</p>
+<label>Page title<input id="cmsTermsTitle" placeholder="Terms & Conditions"></label>
+<label>Terms content<textarea id="cmsTermsContent" class="legalEditor" placeholder="Write your Terms & Conditions..."></textarea></label>
+
+<h3 class="legalSectionHeading">Privacy Policy</h3>
+<p class="hint">Edit the public Privacy Policy page.</p>
+<label>Page title<input id="cmsPrivacyTitle" placeholder="Privacy Policy"></label>
+<label>Privacy content<textarea id="cmsPrivacyContent" class="legalEditor" placeholder="Write your Privacy Policy..."></textarea></label>
+<div class="editorActions"><button type="button" class="btn" id="saveLegalPages">Save Legal Pages</button></div>
+</div>
+
+<div class="opsPane hidden" data-ops-pane="backup">
+<div class="dataActions">
+<button type="button" class="btn" id="exportCmsData">Export Website Data</button>
+<label class="btn ghost importLabel">Import Website Data<input type="file" id="importCmsData" accept=".json"></label>
+<button type="button" class="btn ghost" id="clearDrafts">Delete All Drafts</button>
+</div>
+<h3>Registered Users</h3>
+<div id="adminUsers"></div>
+</div>
+</div>
+
+<div class="adminGrid">
+<form id="contentForm" class="panel"><h2>Create a post</h2>
+<select id="type"><option value="blog">Blog</option><option value="job">Job</option></select>
+<input id="title" required placeholder="Title / Job role">
+<input id="slug" placeholder="URL slug (optional)">
+<input id="meta" placeholder="Category or Company">
+<div class="editorTwo"><input id="author" placeholder="Author"><select id="status"><option value="published">Published</option><option value="draft">Draft</option></select></div>
+<input id="featuredImage" placeholder="Featured image URL">
+<input id="tags" placeholder="Tags, separated by commas">
+<input id="location" placeholder="Location (for jobs)">
+<input id="link" placeholder="Application link (for jobs)">
+<textarea id="excerpt" placeholder="Short excerpt / summary"></textarea>
+<textarea id="description" required placeholder="Write the complete content..."></textarea>
+<div class="editorTwo"><input id="seoTitle" placeholder="SEO title"><input id="seoDescription" placeholder="SEO description"></div>
+<label class="checkRow"><input id="featured" type="checkbox"> Feature this post</label>
+<button class="btn" type="submit">Publish Now</button></form>
+<div class="panel"><h2>Published Content</h2><p class="hint">Use Edit to update any published blog or job.</p><div id="adminPosts"></div></div>
+</div></section><section id="commentsPage" class="hidden"><div class="adminTitle"><div><small>COMMUNITY</small><h1>All Comments</h1></div><button id="backDashboard" class="btn ghost">← Dashboard</button></div><div class="panel"><div id="allComments"></div></div></section></main><script src="js/app.js"></script></body></html>

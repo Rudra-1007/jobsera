@@ -1,0 +1,10 @@
+JOBS ERA SEO SETUP
+
+1. Replace YOUR-DOMAIN.com in robots.txt and sitemap.xml with your purchased domain.
+2. Upload the complete JobsEra folder contents to your hosting public_html/root folder.
+3. Add your domain property in Google Search Console.
+4. Submit: https://YOUR-DOMAIN.com/sitemap.xml
+5. For strong blog/job SEO, move production data from localStorage to a real backend and generate a unique crawlable URL for every post.
+6. Use unique page titles and descriptions for every article/job.
+7. Add JobPosting structured data only for genuine, active job listings.
+8. Keep expired jobs updated or removed.
